@@ -1,0 +1,55 @@
+query{
+  students (where: {
+    name:"Vlad"
+  })
+  {
+    nodes {
+      name
+    }
+  }
+}
+
+mutation{
+  createStudent(inputStudent: {
+    name:"DemoName",
+    groupId: 1
+  })
+  {
+    studentID
+    name
+  }
+}
+
+query{
+  students{
+    nodes{
+      name
+      studentID
+    }
+  }
+}
+
+query{
+  students{
+    nodes{
+      name
+      studentID
+      group {
+        shortName
+        groupId
+      }
+    }
+  }
+}
+
+query AuthorVlad($name : String){
+  students (where: {
+    name: $name
+  })
+  {
+    nodes {
+      name
+      studentID
+    }
+  }
+}
