@@ -1,0 +1,2 @@
+# GraphQLDemo
+.NET GraphQL Demo
